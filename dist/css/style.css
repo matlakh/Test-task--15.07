@@ -1,10 +1,167 @@
+.header {
+  background: #064093;
+  -webkit-backdrop-filter: blur(17px);
+          backdrop-filter: blur(17px);
+  padding: 35px 0; }
+  .header__wrapper {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    width: 100%; }
+  .header__nav {
+    display: none; }
+    @media (min-width: 576px) {
+      .header__nav {
+        display: -ms-flexbox;
+        display: flex; } }
+  .header__list {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: center;
+        align-items: center;
+    margin-bottom: 0;
+    width: 100%; }
+
+.logo {
+  padding: 0; }
+
+.list__item a {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 29px;
+  color: #FFFFFF;
+  transition: .3s ease-in-out; }
+  .list__item a:hover {
+    color: #969696; }
+  @media (min-width: 576) {
+    .list__item a {
+      font-size: 20px; } }
+  @media (min-width: 768px) {
+    .list__item a {
+      font-size: 24px; } }
+
+.hamburger-menu {
+  display: block; }
+  @media (min-width: 576px) {
+    .hamburger-menu {
+      display: none; } }
+
+#menu__toggle {
+  display: none; }
+
+.hamburger-menu .list__item {
+  text-align: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+  padding: 12px 24px;
+  cursor: pointer;
+  height: 60px;
+  transition-duration: 0.25s;
+  border-bottom: 1px solid #4d4d4d; }
+  .hamburger-menu .list__item a {
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: center;
+        align-items: center;
+    transition-duration: 0.25s; }
+    .hamburger-menu .list__item a:hover {
+      color: #0a57c4; }
+
+.menu__btn {
+  display: block;
+  position: absolute;
+  height: 33px;
+  cursor: pointer;
+  z-index: 1000;
+  top: 50%;
+  right: 15px; }
+
+.menu__box {
+  display: none;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  z-index: 999;
+  margin: 0;
+  padding: 60px 0;
+  text-align: center;
+  background-color: #1d1d1dde;
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.4);
+  transition-duration: 0.25s; }
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  z-index: 100;
+  border-radius: 10px; }
+
+.menu__btn > span::before {
+  top: -8px; }
+
+.menu__btn > span::after {
+  top: 8px; }
+
+#menu__toggle:checked ~ .menu__btn > span {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg); }
+
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  -webkit-transform: rotate(0);
+      -ms-transform: rotate(0);
+          transform: rotate(0);
+  background-color: #fff; }
+
+#menu__toggle:checked ~ .menu__btn > span::after {
+  content: "";
+  top: 0;
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg); }
+
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  display: -ms-flexbox;
+  display: flex;
+  right: 0; }
+  #menu__toggle:checked ~ .menu__box body {
+    position: fixed; }
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  transition-duration: 0.25s; }
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Gilroy', sans-serif; }
+  font-family: 'Montserrat'; }
 
 a {
   text-decoration: none;
@@ -14,7 +171,15 @@ a {
 ul,
 li {
   list-style: none;
-  padding: 0; }
+  padding: 0;
+  margin: 0; }
 
 button {
   border: none; }
+
+.container {
+  display: inherit;
+  -ms-flex-pack: inherit;
+      justify-content: inherit;
+  -ms-flex-align: inherit;
+      align-items: inherit; }
